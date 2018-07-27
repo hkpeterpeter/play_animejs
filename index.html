@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<style>
+    #item1, #item2 {
+        opacity: 0;
+        position: absolute;
+    }
+</style>
+</head>
+<body>
+
+<audio autoplay="autoplay" controls="controls">
+    Your browser does not support the audio element.
+    <source src="song.ogg" />
+</audio>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+
+            <div id="item1" >
+               <img src="habhub.png" width="200px" />
+            </div>
+
+
+            <button id="item2" type="button" class="btn btn-primary" >
+               Company tagline
+            </button>
+
+
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!-- anime js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js" ></script>
+
+<script>
+
+    $("document").ready( function() {
+
+
+        var item1 = {
+            targets: '#item1',
+            translateX: 250,
+            translateY: 200,
+            opacity: {
+                value: 1,
+                duration: 5000
+            },
+            scale: {
+                value: 2,
+                duration: 2000,
+                easing: 'easeInOutQuart'
+            },
+            rotate: {
+                value: 360,
+                duration: 2000,
+                easing: 'easeInOutSine'
+            },
+            borderRadius: ['0em', '2em'],
+            easing: 'easeInOutQuad'
+        };
+
+        var item1_hide = {
+            targets: '#item1',
+            scale: 0,
+            duration: 2000,
+            easing: 'easeInOutQuad'
+        }
+
+        var item2 = {
+            targets: '#item2',
+            duration: 2000,
+            opacity: {
+                value: 1,
+                duration: 10000,
+            },
+            translateX: 250,
+            translateY: 200,
+            scale: {
+                value: 2,
+                duration: 5000,
+                easing: 'easeInOutQuart'
+            },
+            rotate: {
+                value: 360,
+                duration: 5000,
+                easing: 'easeInOutSine'
+            }
+        }
+
+        var item2_hide = {
+            targets: '#item2',
+            duration: 2000,
+            opacity: 0,
+            scale: 0
+        }
+
+        var tt = anime.timeline();
+        tt.add(item1);
+        tt.add(item1_hide);
+        tt.add(item2);
+        tt.add(item2_hide);
+
+    });
+
+
+</script>
+</body>
+</html>
