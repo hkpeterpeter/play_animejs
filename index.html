@@ -17,15 +17,16 @@
 </head>
 <body>
 
-<audio autoplay="autoplay" controls="controls">
-    Your browser does not support the audio element.
-    <source src="song.ogg" />
-</audio>
+
 
 
 <div class="container-fluid">
     <div class="row">
         <div class="col">
+
+            <button id="startBtn" type="button" class="btn btn-primary">
+                   start
+            </button>
 
             <div id="item1" >
                <img src="habhub.png" width="200px" />
@@ -55,68 +56,75 @@
     $("document").ready( function() {
 
 
-        var item1 = {
-            targets: '#item1',
-            translateX: 250,
-            translateY: 200,
-            opacity: {
-                value: 1,
-                duration: 5000
-            },
-            scale: {
-                value: 2,
-                duration: 2000,
-                easing: 'easeInOutQuart'
-            },
-            rotate: {
-                value: 360,
-                duration: 2000,
-                easing: 'easeInOutSine'
-            },
-            borderRadius: ['0em', '2em'],
-            easing: 'easeInOutQuad'
-        };
+        $("#startBtn").click( function() {
 
-        var item1_hide = {
-            targets: '#item1',
-            scale: 0,
-            duration: 2000,
-            easing: 'easeInOutQuad'
-        }
 
-        var item2 = {
-            targets: '#item2',
-            duration: 2000,
-            opacity: {
-                value: 1,
-                duration: 10000,
-            },
-            translateX: 250,
-            translateY: 200,
-            scale: {
-                value: 2,
-                duration: 5000,
-                easing: 'easeInOutQuart'
-            },
-            rotate: {
-                value: 360,
-                duration: 5000,
-                easing: 'easeInOutSine'
+
+            var audio = new Audio('song.ogg');
+            audio.play();
+
+
+            var item1 = {
+                targets: '#item1',
+                translateX: 250,
+                translateY: 200,
+                opacity: {
+                    value: 1,
+                    duration: 5000
+                },
+                scale: {
+                    value: 2,
+                    duration: 2000,
+                    easing: 'easeInOutQuart'
+                },
+                rotate: {
+                    value: 360,
+                    duration: 2000,
+                    easing: 'easeInOutSine'
+                },
+                borderRadius: ['0em', '2em'],
+                easing: 'easeInOutQuad'
+            };
+
+            var item1_hide = {
+                targets: '#item1',
+                scale: 0,
+                duration: 2000,
+                easing: 'easeInOutQuad'
             }
-        }
 
-        var item2_hide = {
-            targets: '#item2',
-            duration: 2000,
-            opacity: 0,
-            scale: 0
-        }
+            var item2 = {
+                targets: '#item2',
+                duration: 2000,
+                opacity: {
+                    value: 1,
+                    duration: 10000,
+                },
+                translateX: 250,
+                translateY: 200,
+                scale: {
+                    value: 2,
+                    duration: 5000,
+                    easing: 'easeInOutQuart'
+                },
+                rotate: {
+                    value: 360,
+                    duration: 5000,
+                    easing: 'easeInOutSine'
+                }
+            }
 
-        var tt = anime.timeline();
-        tt.add(item1);
-        tt.add(item1_hide);
-        tt.add(item2);
-        tt.add(item2_hide);
+
+
+
+
+            var tt = anime.timeline();
+            tt.add(item1);
+            tt.add(item1_hide);
+            tt.add(item2);
+
+
+        });
 
     });
 
