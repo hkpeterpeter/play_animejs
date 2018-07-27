@@ -60,8 +60,7 @@
 
 
 
-            var audio = new Audio('song.ogg');
-            audio.play();
+
 
 
             var item1 = {
@@ -117,11 +116,15 @@
 
 
 
+            var audio = new Audio('song.ogg');
+            audio.play().then(  function() {
 
-            var tt = anime.timeline();
-            tt.add(item1);
-            tt.add(item1_hide);
-            tt.add(item2);
+                var tt = anime.timeline();
+                tt.add(item1);
+                tt.add(item1_hide);
+                tt.add(item2);
+
+            });
 
 
         });
