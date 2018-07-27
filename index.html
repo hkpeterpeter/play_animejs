@@ -33,10 +33,6 @@
             </div>
 
 
-            <button id="item2" type="button" class="btn btn-primary" >
-               Company tagline
-            </button>
-
 
         </div>
     </div>
@@ -67,6 +63,7 @@
                 targets: '#item1',
                 translateX: 250,
                 translateY: 200,
+                duration: 2000,
                 opacity: {
                     value: 1,
                     duration: 5000
@@ -87,32 +84,21 @@
 
             var item1_hide = {
                 targets: '#item1',
-                scale: 0,
-                duration: 2000,
-                easing: 'easeInOutQuad'
-            }
-
-            var item2 = {
-                targets: '#item2',
-                duration: 2000,
-                opacity: {
-                    value: 1,
-                    duration: 10000,
-                },
-                translateX: 250,
+                translateX: -250,
                 translateY: 200,
+                duration: 2000,
                 scale: {
-                    value: 2,
-                    duration: 5000,
+                    value: 0,
+                    duration: 2000,
                     easing: 'easeInOutQuart'
                 },
                 rotate: {
-                    value: 360,
-                    duration: 5000,
+                    value: -360,
+                    duration: 2000,
                     easing: 'easeInOutSine'
-                }
+                },
+                easing: 'easeInOutQuad'
             }
-
 
 
 
@@ -122,7 +108,7 @@
                 var tt = anime.timeline();
                 tt.add(item1);
                 tt.add(item1_hide);
-                tt.add(item2);
+
 
             });
 
